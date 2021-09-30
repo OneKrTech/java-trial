@@ -13,4 +13,9 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <modules>
+        <module>spring-data-rest</module>
+        <module>spring-graphql-trial</module>
+    </modules>
+
 </project>

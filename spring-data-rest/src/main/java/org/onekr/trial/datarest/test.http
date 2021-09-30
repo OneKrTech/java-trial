@@ -1,0 +1,65 @@
+
+### 获取列表
+GET http://localhost:8080/users?page=0&size=2
+Content-Type: application/json
+
+### 高级搜索
+POST http://localhost:8080/users/search
+Content-Type: application/json
+Authorization: Basic b2xsaWU6Z2llcmtl
+
+{
+	"page": 0,
+	"size": 2,
+	"rsql":"email==deetta.gerlach@yahoo.com;(id==0a79e2cb-1609-496a-b1d5-3e16f4761a36,id==de809817-19a8-4d15-bfa1-2ffea0abc217)",
+	"where": {
+		"userid": {
+			"_eq": 82016
+		}
+	},
+	"order_by": {
+		"id": "asc",
+		"createdat": "desc"
+	}
+}
+
+### 获取详情
+GET http://localhost:8080/users/b4e72f7b-eca7-450c-8d2f-7ee086a3480e
+Content-Type: application/json
+
+### 新增
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "email": "verena.friesen@gmail.com",
+  "name": "Manuel Streich",
+  "phoneno": "1-889-080-3809",
+  "deleted": false
+}
+
+### 更新
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "id": "b4e72f7b-eca7-450c-8d2f-7ee086a3480e",
+  "email": "madeleine.larkin@qq.com",
+  "name": "Carman Heaney",
+  "phoneno": "1-666-708-4937",
+  "deleted": false,
+  "createdat": "2021-09-30T15:05:43.920+00:00"
+}
+
+### 获取列表
+GET http://localhost:8080/posts?page=0&size=2
+Content-Type: application/json
+
+###
+GET http://localhost:8080/posts/by-user-id?authorid=0
+Content-Type: application/json
+
+{
+  "page": 0,
+  "size": 2
+}
