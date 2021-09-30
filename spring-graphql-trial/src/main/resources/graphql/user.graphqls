@@ -1,0 +1,43 @@
+extend type Query{
+    user(id:ID): UserModel
+    users: [UserModel]
+    userFindById(id:ID!): User
+}
+
+extend type Mutation{
+    userSave(user: UserInput):User
+}
+
+input BaseReq {
+    appId: String
+}
+
+input UserInput {
+    id: String
+    name: String
+    sex: String
+}
+
+type User {
+    id: String!
+    name: String
+    sex: String
+}
+
+input UpdateUserModel {
+    id: String!
+    name: String
+    sex: String
+}
+
+type UserModel {
+    id: String!
+    name: String
+    sex: String
+    auth: AuthModel
+}
+
+type AuthModel{
+    openId: String
+    unionId: String
+}

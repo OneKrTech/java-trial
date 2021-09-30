@@ -1,0 +1,14 @@
+type Query {
+    greeting: String
+    greetingMono : String
+    greetingsFlux : [String]
+}
+
+type Subscription {
+    greetings: String
+}
+
+type Mutation {
+    update(model: UpdateUserModel!): UserModel
+}
+

@@ -1,0 +1,48 @@
+# 单个查询
+query query1($userId:ID="aaa") {
+    user(id:$userId) {
+        id
+        newAuth: auth {
+            openId
+            unionId
+        }
+    }
+    userFindById(id:"zhangbin1"){
+        id
+        name
+    }
+}
+
+# 批量查询
+query query2 {
+    users {
+        id
+        auth {
+            openId
+            unionId
+        }
+    }
+}
+
+query query5{
+    greetingMono
+    greetingsFlux
+}
+
+mutation update1 {
+    userSave(user:{ id:"111", name:"eee", sex:"bbb" }){
+        id
+    }
+}
+
+# 更新
+mutation update3 {
+    abc: update(model: {id: "eee", name: "abceee"}) {
+        id
+        name
+    }
+}
+
+subscription sub1 {
+    greetings
+}

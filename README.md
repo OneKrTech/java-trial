@@ -1,2 +1,2 @@
-# spring-graphql-trial
-spring-graphql 体验
+# spring-trial
+spring 体验
