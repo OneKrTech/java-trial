@@ -24,7 +24,7 @@ Authorization: Basic b2xsaWU6Z2llcmtl
 }
 
 ### 获取详情
-GET http://localhost:8080/users/b4e72f7b-eca7-450c-8d2f-7ee086a3480e
+GET http://localhost:8080/users/52c43ffb-f9df-4130-8958-611386011b59
 Content-Type: application/json
 
 ### 新增

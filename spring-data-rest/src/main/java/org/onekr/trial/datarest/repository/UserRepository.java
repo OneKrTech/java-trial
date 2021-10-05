@@ -1,9 +1,11 @@
 package org.onekr.trial.datarest.repository;
 
 import org.onekr.trial.datarest.entity.User;
+import org.onekr.trial.datarest.entity.projection.UserAll;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
@@ -12,14 +14,15 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin
 //@PreAuthorize("hasRole('ROLE_USER')")
-@RepositoryRestResource(path = "users")
-public interface UserRepository extends JpaRepository<User, String>, JpaSpecificationExecutor<User> {
+@RepositoryRestResource(path = "users", excerptProjection = UserAll.class)
+public
+interface UserRepository extends JpaRepository<User, String>, JpaSpecificationExecutor<User> {
 
 
     /**
      * (non-Javadoc)
      *
-     * @see org.springframework.data.repository.CrudRepository#save(S)
+     * @see org.springframework.data.repository.CrudRepository
      */
     @Override
 //    @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -31,7 +34,7 @@ public interface UserRepository extends JpaRepository<User, String>, JpaSpecific
      * @see org.springframework.data.repository.CrudRepository#deleteById(java.lang.Object)
      */
     @Override
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @RestResource(exported = false)
     void deleteById(String aLong);
 
 }

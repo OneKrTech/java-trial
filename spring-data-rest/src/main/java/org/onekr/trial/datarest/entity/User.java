@@ -3,6 +3,7 @@ package org.onekr.trial.datarest.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -55,6 +56,7 @@ public class User implements Serializable {
     /**
      *
      */
+//    @JsonIgnore
     @Column(name = "phoneNo", insertable = true, updatable = true)
     private String phoneno;
 

@@ -6,6 +6,7 @@ import org.onekr.trial.datarest.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -14,6 +15,7 @@ import java.util.*;
  * @author billy-work
  */
 @Component
+@Order(999)
 public class RepositoriesInitializer implements ApplicationRunner {
 
     @Autowired
